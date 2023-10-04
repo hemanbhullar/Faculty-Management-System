@@ -1,0 +1,46 @@
+.loginPageContainer{
+    margin: 0px 15px;
+    padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+.image{
+    width: 400px;
+    height: 500px;
+    border-radius: 15px 0px 0px 15px;
+    background-image: url("../assets/images/LoginImage.jpeg");
+    background-size: cover;
+}
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 0px 15px 15px 0px;
+    height: 500px;
+    background-color:rgb(237, 219, 194);
+}
+
+@media screen and (max-width: 600px) {
+    .image{
+        width: 300px;
+        height: 400px;
+    }
+    .LoginForm{
+        height: 400px;
+        font-size: 13px;
+    }
+    .LoginForm input{
+       height: 25px;
+    }
+    #inputGroupPrepend{
+        height:25px
+    }
+   .LoginForm  button{
+        width: 80px;
+        
+    }
+}

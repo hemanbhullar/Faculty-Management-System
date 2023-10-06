@@ -2,6 +2,7 @@ import "./LoginFormStyle.css";
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SetAdminCredentialsButton from "./AdminDashboardComponents/SetAdminCredentialsButton";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -20,10 +21,39 @@ const LoginForm = () => {
         return Object.keys(newErrors).length === 0;
     }
 
+     // Retrieve existing faculty credentials or initialize an empty array
+     const facultyCredentials = JSON.parse(localStorage.getItem('facultyCredentials')) || [];
+
+    localStorage.setItem('facultyCredentials', JSON.stringify(facultyCredentials));
+
+    const handleAuthentication = () => {
+        //Retrieve credentials from localStorage
+        const storedFacultyCredentials = JSON.parse(localStorage.getItem('facultyCredentials'));
+
+        const matchingFaculty = storedFacultyCredentials.find(
+            (faculty) => email ===faculty.email && password === faculty.password
+        );
+
+        //check if the entered email and password match the stored values
+        if(matchingFaculty) {
+            if(matchingFaculty.role==='faculty'){
+                window.location.href = '/faculty';
+            }
+            //Authentication successful
+           else  if(matchingFaculty.role=== 'admin') {
+                //Redirect to the admin dashboard
+                window.location.href = '/admin';
+            }
+        }
+        else{
+            //Authentication failed, handle error as needed
+            setErrors({login: 'Invalid email or password' });
+        }
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            //Perform your authentication logic here
+            handleAuthentication();
         }
     };
     return (
@@ -34,7 +64,7 @@ const LoginForm = () => {
                 <div>
                     <Form className="LoginForm" onSubmit={handleSubmit}>
                         <Form.Group controlId="email">
-                            <Form.Label>Email</Form.Label>
+                            <Form.Label style={{fontWeight:'600'}}>Email</Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="Enter your email"
@@ -48,7 +78,7 @@ const LoginForm = () => {
                         </Form.Group>
 
                         <Form.Group controlId="password">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label style={{fontWeight:'600'}}>Password</Form.Label>
                             <Form.Control
                                 type="password"
                                 placeholder="Enter your password"
@@ -61,9 +91,11 @@ const LoginForm = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" style={{margin:'10px'}}>
                             Login
                         </Button>
+                        <p>{errors.login}</p>
+                        <SetAdminCredentialsButton/>
                     </Form>
                 </div>
             </div>

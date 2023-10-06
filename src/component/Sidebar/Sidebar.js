@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { SidebarData } from '../Data/Data';
-
 import "./Sidebar.css"
 import { UilSignOutAlt } from '@iconscout/react-unicons';
-const Sidebar = () => {
+const Sidebar = ({setContent}) => {
 
     const [selected, setSelected] = useState(0);
   return (
@@ -14,7 +13,7 @@ const Sidebar = () => {
             {SidebarData.map((item, index)=> {
                 return(
                     <div className={selected===index?'menuItem active': 'menuItem'}
-                    onClick={()=>setSelected(index)}
+                    onClick={()=>{setSelected(index);setContent(item.component)}}
                     key={index}>
                         <item.icon/>
                         <span>
@@ -25,7 +24,7 @@ const Sidebar = () => {
             })}
 
             <div className='menuItem'>
-                <UilSignOutAlt/>
+                <UilSignOutAlt />
             </div>
         </div>
     </div>

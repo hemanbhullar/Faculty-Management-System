@@ -2,7 +2,6 @@ import {
     UilEstate,
     UilClipboardAlt,
     UilUsersAlt,
-    UilPackage,
     UilChart,
     UilUsdSquare,
 } from "@iconscout/react-unicons";
@@ -12,22 +11,22 @@ export const SidebarData = [
     {
         icon: UilEstate,
         heading: "Dashboard",
+        component: "dashboard",
     },
     {
         icon: UilUsersAlt,
         heading: "FacultyList",
+        component: "facultyList",
     },
     {
         icon: UilClipboardAlt,
         heading: "Assignments",
-    },
-    {
-        icon: UilPackage,
-        heading: "Rewards",
+        component: "assignments",
     },
     {
         icon: UilChart,
-        heading:'Analytics'
+        heading:'Analytics',
+        component: "analytics"
     }
 ]
 

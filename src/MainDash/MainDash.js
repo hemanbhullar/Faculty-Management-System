@@ -11,4 +11,4 @@ const MainDash = () => {
   )
 }
 
-export default MainDash
+export default MainDash;

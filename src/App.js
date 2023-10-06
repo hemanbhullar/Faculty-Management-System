@@ -1,24 +1,32 @@
-import React from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation,Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import FacultyDashBoard from './pages/FacultyDashBoard';
 import NavBar1 from './component/NavBar1';
 import AdminDashBoard from './pages/AdminDashBoard';
+import {useAuth} from './component/UseAuth'
 
-
-
-function App() {
+function NavBar() {
   const location = useLocation();
   const hideNavBarRoutes = ['/'];
 
+  // Render NavBar1 only if the current location is not in hideNavBarRoutes
+  return !hideNavBarRoutes.includes(location.pathname) ? <NavBar1 /> : null;
+}
+
+function App() {
+  const isAuthenticated = useAuth();
   return (
     <div className="App">
-      {hideNavBarRoutes.includes(location.pathname) ? null : <NavBar1 />}
-      <Routes>
-        <Route path='/' element={<LoginPage />}></Route>
-        <Route path='/faculty' element={<FacultyDashBoard />}></Route>
-        <Route path='/admin' element={<AdminDashBoard />}></Route>
-      </Routes>
+      <Router>
+        {/* Include the NavBar component */}
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<LoginPage/>} />
+          <Route path="/faculty" element={isAuthenticated ? <FacultyDashBoard /> : <Navigate to="/" />} />
+          <Route path="/admin" element={isAuthenticated ? <AdminDashBoard /> : <Navigate to="/" />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

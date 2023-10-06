@@ -11,7 +11,7 @@ import { FaBars } from 'react-icons/fa';
 const NavBar1 = () => {
   return (
     <div>
-        <Navbar expand="md" className="navbody bg-body-tertiary">
+      <Navbar expand="md" className="navbody">
       <Container fluid>
         <Navbar.Brand className='navlogo'  href="#"><span className="insidelogo">Profess</span>Xpert</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"><FaBars/></Navbar.Toggle>

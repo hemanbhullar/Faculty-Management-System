@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { SidebarData } from '../Data/Data';
 import "./Sidebar.css"
+import { Link } from 'react-router-dom';
 import { UilSignOutAlt } from '@iconscout/react-unicons';
 const Sidebar = ({setContent}) => {
 
@@ -24,7 +25,7 @@ const Sidebar = ({setContent}) => {
             })}
 
             <div className='menuItem'>
-                <UilSignOutAlt />
+                <Link to='/' style={{textDecoration:'none', color:'black'}}><UilSignOutAlt/></Link>
             </div>
         </div>
     </div>

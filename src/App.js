@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation,Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import FacultyDashBoard from './pages/FacultyDashBoard';
 import NavBar1 from './component/NavBar1';
 import AdminDashBoard from './pages/AdminDashBoard';
-import {useAuth} from './component/UseAuth'
+import { useAuth } from './component/UseAuth'
+import Profile from './pages/Profile';
 
 function NavBar() {
   const location = useLocation();
@@ -22,9 +23,12 @@ function App() {
         {/* Include the NavBar component */}
         <NavBar />
         <Routes>
-          <Route path="/" element={<LoginPage/>} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/faculty" element={isAuthenticated ? <FacultyDashBoard /> : <Navigate to="/" />} />
           <Route path="/admin" element={isAuthenticated ? <AdminDashBoard /> : <Navigate to="/" />} />
+          {/* Define two paths for the Profile component */}
+          <Route path="/faculty/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/" />} />
+          <Route path="/admin/profile"element={isAuthenticated ? <Profile /> : <Navigate to="/" />}/>
         </Routes>
       </Router>
     </div>

@@ -7,8 +7,25 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BsSearch } from "react-icons/bs";
 import { FaBars } from 'react-icons/fa';
+import { Link,useLocation } from 'react-router-dom'; // Import Link from react-router-dom
+import { useAuth } from './UseAuth';
 
 const NavBar1 = () => {
+  const isAuthenticated = useAuth();
+  const location = useLocation();
+
+  // Determine the profile route based on the current route
+  const profileRoute = location.pathname.startsWith('/faculty') ? '/faculty/profile' : '/admin/profile';
+
+  // Render the profile link/button only if the user is authenticated
+  const profileLink = isAuthenticated ? (
+    <Link to={profileRoute}>
+      <img
+        src="https://media.licdn.com/dms/image/D4D03AQEVGlheMFRE8A/profile-displayphoto-shrink_800_800/0/1679758221275?e=2147483647&v=beta&t=jeNR1kuF--x2hOncSwFCvDrS0BclQ54sgrA4ZGTP6MA"
+        alt="Profile"
+      />
+    </Link>
+  ) : null;
   return (
     <div>
       <Navbar expand="md" className="navbody">
@@ -36,12 +53,7 @@ const NavBar1 = () => {
         </Navbar.Collapse>
         {/* Profile picture on the right */}
         <div className="d-none d-md-block">
-            <a href="#action1" className="navLink">
-              <img
-                src="https://media.licdn.com/dms/image/D4D03AQEVGlheMFRE8A/profile-displayphoto-shrink_800_800/0/1679758221275?e=2147483647&v=beta&t=jeNR1kuF--x2hOncSwFCvDrS0BclQ54sgrA4ZGTP6MA"
-                alt="Profile"
-              />
-            </a>
+             {profileLink}
           </div>
       </Container>
     </Navbar>

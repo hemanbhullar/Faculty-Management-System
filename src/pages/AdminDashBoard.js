@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../component/Sidebar/Sidebar'
 import MainDash from '../MainDash/MainDash'
+import RightSide from '../component/RightSide/RightSide'
 import FacultyList from '../MainDash/FacultyList'
 import Assignments from '../MainDash/Assignments'
 import Analytics from '../MainDash/Analytics'
@@ -23,7 +24,7 @@ const AdminDashBoard = () => {
       <div className='AdminGlass'>
       <Sidebar setContent={setContent} />
        <div className="content">{components[content]}</div>
-      <div></div>
+       <RightSide/>
       </div>
     </div>
   )

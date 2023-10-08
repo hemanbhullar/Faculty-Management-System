@@ -23,7 +23,7 @@
     font-weight: 600;
 }
 
-.navLink img{
+.d-none img{
     max-height: 40px;
     max-width: 40px;
     margin-right: 20px;

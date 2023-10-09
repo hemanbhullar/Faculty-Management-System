@@ -1,5 +1,16 @@
-.sidebar{
+.sidebar1{
     height: 100vh;
-    position:sticky;
     scroll-behavior: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 239, 219);
+    border-radius: 15px;
+}
+
+.sidebar1 button{
+    border: 0px;
+
 }

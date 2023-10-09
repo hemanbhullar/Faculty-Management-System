@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SetAdminCredentialsButton from "./AdminDashboardComponents/SetAdminCredentialsButton";
+import { useEffect } from "react";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -11,6 +12,18 @@ const LoginForm = () => {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     
+    useEffect(() => {
+      //Check if the user is authenticated when the component mounts
+      const authenticated = localStorage.getItem('authenticated') === 'true';
+      if(authenticated) {
+        const role = localStorage.getItem('role');
+        if(role === 'faculty') {
+          navigate('/faculty');
+        } else if(role === 'admin') {
+          navigate('/admin');
+        }
+      }
+    }, [navigate]);
   
     const validateForm = () => {
       const newErrors = {};
@@ -33,6 +46,7 @@ const LoginForm = () => {
       if (matchingFaculty) {
         // Authentication successful, set local storage to indicate authentication
         localStorage.setItem('authenticated', 'true');
+        localStorage.setItem('role', matchingFaculty.role);
         if (matchingFaculty.role === 'faculty') {
           navigate('/faculty');
         } else if (matchingFaculty.role === 'admin') {

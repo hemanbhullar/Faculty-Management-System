@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 
-const CustomerReview = () => {
+const StudentReview = () => {
   const data = {
     series: [
       {
@@ -55,9 +55,9 @@ const CustomerReview = () => {
       }
     },
   };
-  return <div className="CustomerReview">
+  return <div className="StudentReview">
         <Chart options={data.options} series={data.series} type="area" />
   </div>;
 };
 
-export default CustomerReview;
+export default StudentReview;

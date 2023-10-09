@@ -74,32 +74,32 @@ function ExpandedCard({param, setExpanded}){
             },
             tooltip: {
                 x: {
-                    format: "dd/MM/yy HH:mm",
+                    format: "dd/MM/yy",
                 },
             },
             grid: {
                 show:true,
             },
             xaxis: {
-                type: "datetime",
+                type: "date",
                 categories:[
-                    "2018-09-19T00:00:00.000Z",
-                    "2018-09-19T01:30:00.000Z",
-                    "2018-09-19T02:30:00.000Z",
-                    "2018-09-19T03:30:00.000Z",
-                    "2018-09-19T04:30:00.000Z",
-                    "2018-09-19T05:30:00.000Z",
-                    "2018-09-19T06:30:00.000Z",
+                    "2018-09-19",
+                    "2019-09-19",
+                    "2020-09-19",
+                    "2021-09-19",
+                    "2022-09-19",
+                    "2022-09-19",
+                    "2023-09-19",
                   ],
             },
         },
     };
-    const chartData = [
-        {
-          name: param.title,
-          data: [30, 40, 45, 50, 49, 60, 70],
-        },
-      ];
+    // const chartData = [
+    //     {
+    //       name: param.title,
+    //       data: param.series.,
+    //     },
+    //   ];
     return(
         <div className='ExpandedCard' style={{background: param.color.backGround, boxShadow: param.color.boxShadow}}>
             <div><UilTimes onClick={setExpanded} /></div>
@@ -107,9 +107,9 @@ function ExpandedCard({param, setExpanded}){
                 {param.title}
             </span>
             <div className='chartContainer'>
-                <Chart series={chartData} type='area' options={data.options}/>
+                <Chart series={param.series} type='area' options={data.options}/>
             </div>
-            <span>Last 24 hours</span>
+            <span>Last 5 years</span>
         </div>
     )
 }

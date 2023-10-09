@@ -6,6 +6,21 @@
     width: 100%;
 }
 
+.weather{
+    background: url("https://images.pexels.com/photos/186980/pexels-photo-186980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 9rem;
+    position:relative;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 20px;
+    border-radius: 0.7rem;
+    background-size: cover;
+    box-shadow: 2px 2px 2px 2px rgb(134, 134, 251);
+}
+
+.weather:hover{
+    box-shadow: none !important;
+}
 @media screen and (max-width: 1200px){
     .Cards{
         flex-direction: column;

@@ -25,7 +25,7 @@ const Sidebar = ({setContent}) => {
             })}
 
             <div className='menuItem'>
-                <Link to='/' style={{textDecoration:'none', color:'black'}}><UilSignOutAlt/></Link>
+                <Link to='/' style={{textDecoration:'none', color:'black'}} onClick={()=>{localStorage.setItem('authenticated','false')}}><UilSignOutAlt/></Link>
             </div>
         </div>
     </div>

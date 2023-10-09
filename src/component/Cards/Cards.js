@@ -6,6 +6,10 @@ import Card from '../Card/Card'
 const Cards = () => {
   return (
     <div className='Cards'>
+      <div className='parentContainer'>
+      <div className='weather'>
+        </div>
+      </div>
         {CardsData.map((card, id)=>{
             return(
                 <div className='parentContainer'>
@@ -15,7 +19,7 @@ const Cards = () => {
                     barValue={card.barValue}
                     value={card.value}
                     png={card.png}
-                    serirs={card.series}
+                    series={card.series}
                     />
                 </div>
             )

@@ -4,6 +4,7 @@ import {
     UilUsersAlt,
     UilChart,
 } from "@iconscout/react-unicons";
+import { MdOutlineFeedback } from "react-icons/md";
 
 import { BsFillPersonFill } from "react-icons/bs";
 // Recent Card Imports
@@ -32,6 +33,11 @@ export const SidebarData = [
         icon: UilChart,
         heading:'Analytics',
         component: "analytics"
+    },
+    {
+        icon: MdOutlineFeedback,
+        heading:'Feedback',
+        component: 'rating',
     }
 ]
 

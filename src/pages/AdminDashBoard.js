@@ -5,6 +5,7 @@ import RightSide from '../component/RightSide/RightSide'
 import FacultyList from '../MainDash/FacultyList'
 import Assignments from '../MainDash/Assignments'
 import Analytics from '../MainDash/Analytics'
+import Feedback from '../MainDash/Feedback'
 import './Admin.css'
 
 const AdminDashBoard = () => {
@@ -16,7 +17,8 @@ const AdminDashBoard = () => {
     dashboard: <MainDash key="dashboard" />,
     facultyList: <FacultyList key="facultyList" />,
     assignments: <Assignments key="assignments" />,
-    analytics: <Analytics key="analytics" />
+    analytics: <Analytics key="analytics" />,
+    rating: <Feedback key="feedback" />
     // Add more content components as needed
   };
   return (

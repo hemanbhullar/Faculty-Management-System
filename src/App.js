@@ -6,6 +6,7 @@ import NavBar1 from './component/NavBar1';
 import AdminDashBoard from './pages/AdminDashBoard';
 import { useAuth } from './component/UseAuth'
 import Profile from './pages/Profile';
+import Chatbot from './component/chatbot/Chatbot';
 
 function NavBar() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
           <Route path="/admin/profile"element={isAuthenticated ? <Profile /> : <Navigate to="/" />}/>
         </Routes>
       </Router>
+      <Chatbot />
     </div>
   );
 }

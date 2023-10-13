@@ -61,7 +61,7 @@
   pointer-events: auto;
   transform: scale(1);
 }
-h2 {
+.HelpHeading{
   padding: 16px 0;
   position: relative;
   text-align: center;

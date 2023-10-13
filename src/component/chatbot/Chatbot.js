@@ -104,7 +104,7 @@ const Chatbot = () => {
       <header>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-        <h2>Help & Support</h2>
+        <h2 className='HelpHeading'>Help & Support</h2>
         {/* <span className="close-btn material-symbols-outlined" onClick={closeChatbot}>
           close
         </span> */}

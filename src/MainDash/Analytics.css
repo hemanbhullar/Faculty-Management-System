@@ -1,0 +1,36 @@
+  .statistics-container {
+    overflow-y: scroll;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Add this to create horizontal spacing */
+    align-items: center;
+    height: 30vh;
+  }
+  
+  .statistic-box {
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 20px;
+    width: 200px;
+  }
+  .statistic-box:hover {
+    background: #8771e7;
+  }
+  .batch-select{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: -20rem;
+  
+  }
+  .batch-dropdown {
+    margin-bottom: 10rem;
+    padding: 20rem;
+  }
+
+  @media screen and (max-width:1004px){
+    .statistics-container{
+      flex-direction: column;
+    }
+  }
+  

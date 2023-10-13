@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from "react";
 import axios from "axios";
+import "./Card.css"
 
 const TimeAndWeatherCard = () => {
     const [time, setTime] = useState(new Date());
@@ -29,8 +30,8 @@ const TimeAndWeatherCard = () => {
     }, []);
 
     return (
-        <div className="card">
-            <h1>Time and Weather</h1>
+        <div className="CompactCard timeCard">
+            <h3><span style={{color:'azure'}}>The Time Watch</span></h3>
             <div className="time">
                 <p>Current Time:</p>
                 <p>{time.toLocaleTimeString()}</p>

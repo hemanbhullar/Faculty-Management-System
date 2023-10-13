@@ -2,13 +2,15 @@ import React from 'react'
 import './Cards.css'
 import { CardsData } from '../Data/Data'
 import Card from '../Card/Card'
+import TimeAndWeatherCard from '../Card/TimeAndWeatherCard'
 
 const Cards = () => {
   return (
     <div className='Cards'>
       <div className='parentContainer'>
-      <div className='weather'>
-        </div>
+        <div>
+      <TimeAndWeatherCard />
+      </div>
       </div>
         {CardsData.map((card, id)=>{
             return(

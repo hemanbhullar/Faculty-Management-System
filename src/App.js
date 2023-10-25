@@ -13,7 +13,15 @@ function NavBar() {
   const hideNavBarRoutes = ['/'];
 
   // Render NavBar1 only if the current location is not in hideNavBarRoutes
-  return !hideNavBarRoutes.includes(location.pathname) ? <NavBar1 /> : null;
+  return !hideNavBarRoutes.includes(location.pathname) ? <NavBar1 />: null;
+}
+
+function ChatBot() {
+  const location = useLocation();
+  const hideNavBarRoutes = ['/'];
+
+  // Render NavBar1 only if the current location is not in hideNavBarRoutes
+  return !hideNavBarRoutes.includes(location.pathname) ? <Chatbot />: null;
 }
 
 function App() {
@@ -31,8 +39,8 @@ function App() {
           <Route path="/faculty/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/" />} />
           <Route path="/admin/profile"element={isAuthenticated ? <Profile /> : <Navigate to="/" />}/>
         </Routes>
+        <ChatBot />
       </Router>
-      <Chatbot />
     </div>
   );
 }

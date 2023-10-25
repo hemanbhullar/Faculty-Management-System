@@ -38,8 +38,8 @@ const NavBar1 = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1" className="navLink">Home</Nav.Link>
-            <Nav.Link href="#action1" className="navLink">Profile</Nav.Link>
+            <Nav.Link href="/" className="navLink">Home</Nav.Link>
+            <Nav.Link href="/admin/profile" className="navLink">Profile</Nav.Link>
             <Form className="d-flex">
             <Form.Control
               type="search"

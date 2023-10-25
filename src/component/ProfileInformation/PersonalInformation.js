@@ -34,6 +34,20 @@ const PersonalInformation = () => {
           </div>
         </div>
       </div>
+      </div>
+      <div className='personalContainer'>
+        <h4>Password</h4>
+        <p>Modify your current password.</p>
+        <div className='name'>
+        <div>
+          <div className='full-name'>
+            <div><p>current password</p>
+            <input type="password" value={'heman@1'}/></div>
+            <div><p>New password</p>
+            <input type="password" value={'heman@1'}/></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   )

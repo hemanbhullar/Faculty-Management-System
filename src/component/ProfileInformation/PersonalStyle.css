@@ -32,6 +32,7 @@
 }
 .name div button{
     height: 2rem;
+    overflow: hidden;
 }
 .uploadAndDelete{
     display: flex;

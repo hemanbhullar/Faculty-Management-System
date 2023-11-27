@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 import { InputGroup, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import {Col} from 'react-bootstrap';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 import Alert from 'react-bootstrap/Alert';
 
 function FeedbackForm() {
